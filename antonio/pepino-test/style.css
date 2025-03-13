@@ -1,7 +1,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -54,11 +54,15 @@ body {
 .sidenav li {
     margin-bottom: 1rem;
     list-style-image: url("./images/directory.svg");
-    font-size: 28px;
+    font-size: 30px;
     color: #6b6b6b;
 }
+.sidenav .active {
+
+    color: black;
+
+}
 .sidenav a {
-    font-family: Arial, sans-serif;
     font-size: 18px;
     color: #6b6b6b;
     text-decoration: none;
@@ -69,9 +73,10 @@ body {
 
 
 h2 {
+
     font-size: 1.5rem;
     color: #333;
-    margin: 1rem 0;
+    margin: 1rem 2rem;
 }
 
 
@@ -124,8 +129,7 @@ h2 {
     align-items: center;
     gap: 1rem;
 }
-.color-options-row p {
-    margin: 0;
+.color-title{
     font-weight: bold;
 }
 .swatches {
@@ -133,23 +137,47 @@ h2 {
     gap: 1rem;
 }
 .color-swatch {
-    width: 40px;
+    width: 100px;
     height: 20px;
     border: 1px solid #ccc;
     cursor: pointer;
 }
-
+.color-swatch-black {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+    border-radius: 2px;
+}
+.color-swatch-white {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+    border-radius: 2px;
+}
+.color-swatch-green {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+    border-radius: 2px;
+}
 .color-swatch[data-color="#000"] {
     background-color: #000;
+    border: none;
 }
 .color-swatch[data-color="#fff"] {
     background-color: #fff;
-    border: 1px solid #000;
+    border: none;
 }
 .color-swatch[data-color="#a8ff00"] {
     background-color: #a8ff00;
+    border: none;
 }
-
+.color-swatch-black:focus {
+    border: 1px solid #000;
+}
+.color-swatch-white:focus {
+    border: 1px solid #000;
+}
+.color-swatch-green:focus {
+    border: 1px solid #000;
+}
 /* pagina de descarga */
 .modal {
     position: fixed;

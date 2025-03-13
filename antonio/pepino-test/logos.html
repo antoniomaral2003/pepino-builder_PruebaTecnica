@@ -19,7 +19,7 @@
 <!-- barra lateral -->
 <div class="sidenav">
     <ul>
-        <li><a href="logos.html">Logos</a></li>
+        <li><a href="logos.html" class="active">Logos</a></li>
         <li><a href="colores.html">Colores</a></li>
         <li><a href="tipografia.html">Tipografía y Voz</a></li>
         <li><a href="iconos.html">Iconos</a></li>
@@ -72,15 +72,21 @@
     </div>
 
     <!-- Colores verde, blanco y negro -->
+    <p class="color-title">3 color options</p>
     <div class="color-options-row">
-        <p>3 color options</p>
         <div class="swatches" id="mainSwatches">
 
-            <div class="color-swatch" data-color="#000"></div>
+            <div class="color-swatch-black" tabindex="0">
+                <div class="color-swatch" data-color="#000"></div>
+            </div>
 
-            <div class="color-swatch" data-color="#fff"></div>
+            <div class="color-swatch-white" tabindex="0">
+                <div class="color-swatch" data-color="#fff"></div>
+            </div>
 
-            <div class="color-swatch" data-color="#a8ff00"></div>
+            <div class="color-swatch-green" tabindex="0">
+                <div class="color-swatch" data-color="#a8ff00"></div>
+            </div>
         </div>
     </div>
 </div>
