@@ -40,28 +40,31 @@ body {
     top: 70px;
     left: 0;
     width: 400px;
-    height: calc(100% - 70px);
-    background-color: #f1f1f1;
+    height: 100vh;
+    border-right: 1px solid #e0e0e0;
+    background-color: white;
     z-index: 9998;
 }
 .sidenav ul {
     list-style: none;
-    margin: 200px 0 0 2rem;
     padding: 0;
+    margin-left: 3.5rem;
+    margin-top: 2rem;
 }
 .sidenav li {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    list-style-image: url("./images/directory.svg");
+    font-size: 28px;
+    color: #6b6b6b;
 }
 .sidenav a {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #6b6b6b;
     text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 0.5rem;
-    border-radius: 8px;
 }
 .sidenav a:hover {
-    background-color: #4CAF50;
-    color: #fff;
+    color: black;
 }
 
 
