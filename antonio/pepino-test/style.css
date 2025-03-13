@@ -1,0 +1,240 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 400px;
+}
+
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.div-main-extra {
+    height: 56px;
+    width: 208px;
+    padding-bottom: 80px;
+}
+.main-nav img {
+    padding: 0.4rem;
+    max-width: 100%;
+}
+
+
+.sidenav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 400px;
+    height: calc(100% - 70px);
+    background-color: #f1f1f1;
+    z-index: 9998;
+}
+.sidenav ul {
+    list-style: none;
+    margin: 200px 0 0 2rem;
+    padding: 0;
+}
+.sidenav li {
+    margin-bottom: 2rem;
+}
+.sidenav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+.sidenav a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1rem 0;
+}
+
+
+.logo-download-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.logo-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.logo-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.cloud-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+
+.logo-preview {
+    text-align: center;
+    margin-bottom: 1rem;
+    /* fondo grid */
+    background-color: #fff;
+    background-image:
+            linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
+            linear-gradient(45deg, #ccc 25%, #fff 25%, #fff 75%, #ccc 75%, #ccc);
+    background-size: 20px 20px; /* size of each checker */
+    background-position: 0 0, 10px 10px;
+    border-radius: 8px;
+    padding: 1rem;
+}
+#mySVG {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Colores */
+.color-options-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.color-options-row p {
+    margin: 0;
+    font-weight: bold;
+}
+.swatches {
+    display: flex;
+    gap: 1rem;
+}
+.color-swatch {
+    width: 40px;
+    height: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.color-swatch[data-color="#000"] {
+    background-color: #000;
+}
+.color-swatch[data-color="#fff"] {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.color-swatch[data-color="#a8ff00"] {
+    background-color: #a8ff00;
+}
+
+/* pagina de descarga */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.hidden {
+    display: none;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 500px;
+    position: relative;
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* formato */
+.format-section {
+    margin: 1rem 0;
+}
+.format-section label {
+    margin-right: 1rem;
+}
+
+/* colores dento de pag extra */
+.color-section {
+    margin: 1rem 0;
+}
+.modal-swatch {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+.modal-swatch[data-color="#000"] {
+    background-color: #000;
+}
+.modal-swatch[data-color="#fff"] {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.modal-swatch[data-color="#a8ff00"] {
+    background-color: #a8ff00;
+}
+
+/* botones pag extra */
+.modal-buttons {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+#downloadBtn,
+#cancelBtn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+#downloadBtn {
+    background-color: #4CAF50;
+    color: #fff;
+}
+#cancelBtn {
+    background-color: #ccc;
+}
+#downloadBtn:hover {
+    background-color: #45a049;
+}
+#cancelBtn:hover {
+    background-color: #bbb;
+}

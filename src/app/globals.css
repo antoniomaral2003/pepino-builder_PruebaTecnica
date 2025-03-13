@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: sans-serif;
+}
+
+/* REMOVE manually defined Tailwind classes (they already exist in Tailwind) */
+.test-bg {
+    @apply bg-red-500;
+}
+
+/* FIX INVALID MEDIA QUERY */
+@media (max-width: 768px) {
+    /* This syntax is INVALID in CSS */
+    /* .bg-[url('/images/cat.png')] {
+        background-size: 100px;
+    } */
+
+    /* CORRECTED SYNTAX: */
+    .cat-background {
+        background-image: url('/images/cat.png');
+        background-size: 100px;
+    }
+}

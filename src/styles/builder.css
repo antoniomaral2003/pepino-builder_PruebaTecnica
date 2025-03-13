@@ -1,0 +1,243 @@
+/* ==================== */
+/* Header Styles */
+/* ==================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #000000; /* Fondo negro */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: auto;
+  width: 120px; /* Ajusta el tamaño del logo */
+}
+
+/* Header Buttons */
+.center-buttons {
+  display: flex !important; /* Force flex layout */
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center;
+  justify-content: center; /* Center buttons horizontally */
+}
+
+.header-button {
+  background-color: #000000; /* Fondo negro */
+  border: none;
+  color: #ffffff; /* Iconos blancos */
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.header-button:hover {
+  background-color: #333333; /* Fondo más claro al hacer hover */
+}
+
+/* Ensure all icons have the same size */
+.header-button .fa {
+  font-size: 18px; /* Set a fixed size for all icons */
+  width: 18px; /* Ensure consistent width */
+  height: 18px; /* Ensure consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-button .icon {
+  font-size: 18px; /* Tamaño del icono */
+}
+
+/* Active device button */
+.header-button.active {
+  position: relative;
+}
+
+.header-button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Adjust based on your design */
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff; /* White line */
+}
+
+/* Logout Button */
+.logout-button {
+  background-color: #000000; /* Fondo negro */
+  border: 1px solid #ffffff; /* Borde blanco */
+  color: #ffffff; /* Texto blanco */
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #ffffff; /* Fondo blanco al hacer hover */
+  color: #000000; /* Texto negro al hacer hover */
+}
+
+/* ==================== */
+/* Left Sidebar Styles */
+/* ==================== */
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 64px; /* Ajuste para el header */
+  width: 250px;
+  height: calc(100vh - 64px); /* Ajuste para el header */
+  background-color: #e2ffdb; /* Fondo blanco */
+  color: #000000; /* Letras negras */
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.left-sidebar.collapsed {
+  width: 0 !important; /* Ocultar completamente la barra lateral */
+  padding: 0 !important; /* Eliminar el padding */
+}
+
+/* Hide the sidebar when isSidebarHidden is true */
+.left-sidebar.hidden {
+  display: none !important;
+}
+
+/* ==================== */
+/* Toggle Sidebar Button */
+/* ==================== */
+.toggle-sidebar-button {
+  position: fixed;
+  left: 250px;
+  top: calc(50% + 32px); /* Ajuste para el header */
+  transform: translateY(-50%);
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #e5e5e5; /* Borde sutil */
+  border-radius: 4px;
+  width: 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000; /* Letras negras */
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 20;
+  transition: background-color 0.2s, left 0.3s ease;
+}
+
+.toggle-sidebar-button:hover {
+  background-color: #f9f9f9; /* Fondo más claro al hacer hover */
+}
+
+.left-sidebar.collapsed .toggle-sidebar-button {
+  left: 0 !important; /* Mover el botón al borde izquierdo */
+}
+
+/* Hide the toggle button when isSidebarHidden is true */
+.left-sidebar.hidden + .toggle-sidebar-button {
+  display: none !important;
+}
+
+/* ==================== */
+/* Main Content Area */
+/* ==================== */
+.main-content {
+  margin-top: 64px; /* Ajuste para el header */
+  margin-left: 250px; /* Ajuste para la barra lateral */
+  width: calc(100% - 250px); /* Ancho cuando la barra lateral está expandida */
+  background-color: #f8f9fa;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.left-sidebar.collapsed ~ .main-content {
+  margin-left: 0 !important; /* Eliminar el margen izquierdo */
+  width: 100% !important; /* Ocupar toda la pantalla */
+}
+
+/* ==================== */
+/* GrapesJS Blocks */
+/* ==================== */
+.left-sidebar .gjs-block-categories {
+  background-color: #e2ffdb !important; /* Fondo verdecito */
+}
+
+.left-sidebar .gjs-block-category {
+  background-color: #ffffff !important; /* Fondo blanco */
+  color: #000000 !important; /* Letras negras */
+  border: 1px solid #e5e5e5 !important; /* Borde sutil */
+  border-radius: 8px !important;
+  margin: 5px 0 !important;
+  padding: 10px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Sombra sutil */
+}
+
+.left-sidebar .gjs-block-category:hover {
+  background-color: #f9f9f9 !important; /* Fondo más claro al hacer hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada al hacer hover */
+}
+
+.left-sidebar .gjs-block {
+  margin: 5px 5px !important;
+  background-color: #ffffff !important; /* Fondo blanco */
+  border: 1px solid #e5e5e5 !important; /* Borde sutil */
+  border-radius: 8px !important;
+  cursor: grab;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  font-size: 14px !important;
+  color: #000000 !important; /* Letras negras */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Sombra sutil */
+}
+
+.left-sidebar .gjs-block:hover {
+  background-color: #f9f9f9 !important; /* Fondo más claro al hacer hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Sombra más pronunciada al hacer hover */
+}
+
+.left-sidebar .gjs-block-label {
+  color: #000000 !important; /* Letras negras */
+}
+
+.left-sidebar .gjs-block svg {
+  fill: #000000 !important; /* Iconos negros */
+}
+
+/* ==================== */
+/* Hide Original GrapesJS Buttons */
+/* ==================== */
+/* GrapesJS devices buttons */
+.gjs-pn-devices-c {
+  display: none !important;
+}
+
+/* GrapesJS options buttons */
+/* see the grill, preview, full screen, see code, go back, go forward, download, clean all canva */
+.gjs-pn-options {
+  display: none !important;
+}
