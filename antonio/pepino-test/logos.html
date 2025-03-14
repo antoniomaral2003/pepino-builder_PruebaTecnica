@@ -34,12 +34,13 @@
     <!-- titulo a la izqda + cloud a la derecha -->
     <div class="logo-title-row">
         <p class="logo-title">Logo negativo bicolor</p>
-        <img
-                src="images/cloud-arrow-down-fill.svg"
-                alt="Ícono de descarga"
-                class="cloud-icon"
-                id="downloadIcon"
-        />
+        <div class="dropdown">
+            <img src="images/cloud-arrow-down-fill.svg" alt="Ícono de descarga" class="cloud-icon" id="downloadIcon" />
+            <div class="dropdown-content">
+                <a href="#" class="d-original">Download Original</a>
+                <a href="#" class="d-as">Download As...</a>
+            </div>
+        </div>
     </div>
 
     <!-- Preview -->
@@ -97,24 +98,30 @@
         <!-- Close button -->
         <span class="close-button" id="closeModal">&times;</span>
 
-        <h2>Descargar</h2>
+        <h2 class="h2-modal">Descargar activo</h2>
         <p>Selecciona el formato y color del logo.</p>
 
         <!-- formato con botones radio -->
         <div class="format-section">
             <h3>Formato:</h3>
-            <label><input type="radio" name="fileFormat" value="png" checked> PNG</label>
+            <label><input type="radio" name="fileFormat" value="png"> PNG</label>
             <label><input type="radio" name="fileFormat" value="jpg"> JPG</label>
             <label><input type="radio" name="fileFormat" value="webp"> WEBP</label>
-            <label><input type="radio" name="fileFormat" value="svg"> SVG</label>
+            <label><input type="radio" name="fileFormat" value="svg" checked> SVG</label>
         </div>
 
         <!-- tambien colores dentro de pag de descarga -->
+        <h3>Colores:</h3>
         <div class="color-section">
-            <h3>Colores:</h3>
-            <div class="modal-swatch" data-color="#000"></div>
-            <div class="modal-swatch" data-color="#fff"></div>
-            <div class="modal-swatch" data-color="#a8ff00"></div>
+            <div class="color-swatch-black color-modal" tabindex="0">
+                <div class="modal-swatch" data-color="#000"></div>
+            </div>
+            <div class="color-swatch-white color-modal" tabindex="0">
+                <div class="modal-swatch" data-color="#fff"></div>
+            </div>
+            <div class="color-swatch-green color-modal" tabindex="0">
+                <div class="modal-swatch" data-color="#a8ff00"></div>
+            </div>
         </div>
 
         <!-- DOWNLOAD & CANCEL -->

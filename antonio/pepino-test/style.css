@@ -103,6 +103,49 @@ h2 {
     height: 24px;
     cursor: pointer;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+.dropdown-content{
+    right: 0;
+    left: auto;
+    white-space: nowrap;
+    min-width: 200px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+.dropdown-content a {
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+}
+.dropdown-content .d-original::before {
+    content: url("./images/download-original.svg");
+    margin-right: 0.5rem;
+}
+.dropdown-content .d-as::before {
+    content: url("./images/download-as.svg");
+    margin-right: 0.5rem;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+.show-dropdown {
+    display: block;
+}
 
 
 .logo-preview {
@@ -191,10 +234,14 @@ h2 {
     align-items: center;
     z-index: 10000;
 }
+.h2-modal {
+    margin: 0;
+}
 .hidden {
     display: none;
 }
 .modal-content {
+    width: 100%;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -213,20 +260,27 @@ h2 {
 /* formato */
 .format-section {
     margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
 }
 .format-section label {
     margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* colores dento de pag extra */
 .color-section {
     margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.color-modal {
+    margin-right: 0.5rem;
 }
 .modal-swatch {
     display: inline-block;
-    width: 40px;
+    width: 100px;
     height: 20px;
-    margin-right: 1rem;
     cursor: pointer;
     border: 1px solid #ccc;
     vertical-align: middle;
@@ -234,38 +288,47 @@ h2 {
 
 .modal-swatch[data-color="#000"] {
     background-color: #000;
+    border: none;
 }
+
 .modal-swatch[data-color="#fff"] {
     background-color: #fff;
-    border: 1px solid #000;
+    border: none;
 }
+
 .modal-swatch[data-color="#a8ff00"] {
     background-color: #a8ff00;
+    border: none;
 }
+
 
 /* botones pag extra */
 .modal-buttons {
     margin-top: 1.5rem;
     text-align: right;
+    display: flex;
+    justify-content: flex-start;
 }
 #downloadBtn,
 #cancelBtn {
     padding: 0.6rem 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-family: Arial, sans-serif;
 }
 #downloadBtn {
-    background-color: #4CAF50;
+    background-color: #3d3d3d;
     color: #fff;
 }
 #cancelBtn {
-    background-color: #ccc;
+    color: #6c6c6c;
+    background-color: #fff;
 }
 #downloadBtn:hover {
-    background-color: #45a049;
+    background-color: #000;
 }
 #cancelBtn:hover {
-    background-color: #bbb;
+    background-color: #ebebeb;
 }

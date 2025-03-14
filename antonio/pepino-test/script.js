@@ -1,6 +1,6 @@
 
 let selectedColor = "#000";  // start as black
-let selectedFormat = "png";  // start as PNG
+let selectedFormat = "svg";  // start as SVG
 
 // los gets
 const mySVG = document.getElementById("mySVG");
@@ -12,6 +12,9 @@ const cancelBtn = document.getElementById("cancelBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const formatRadios = document.getElementsByName("fileFormat");
 const modalSwatches = document.querySelectorAll(".modal-swatch");
+const dropdownContent = document.querySelector(".dropdown-content");
+const downloadOriginal = document.querySelector(".d-original");
+const downloadAs = document.querySelector(".d-as");
 
 
 /**********************************************
@@ -40,11 +43,28 @@ function setColor(newColor) {
  * 2) MODAL LOGIC: open/close
  **********************************************/
 downloadIcon.addEventListener("click", () => {
+    dropdownContent.classList.toggle("show-dropdown");
+});
+
+window.addEventListener("click", (e) => {
+    if (!e.target.matches(downloadIcon)) {
+        dropdownContent.classList.remove("show-dropdown");
+    }
+});
+
+downloadOriginal.addEventListener("click", () => {
+    downloadAsSVG();
+    dropdownContent.classList.remove("show-dropdown");
+});
+
+downloadAs.addEventListener("click", () => {
+
     downloadModal.classList.remove("hidden");
     // Sync the current color in the modal
     highlightModalSwatch(selectedColor);
     // Sync the current format in the modal
     updateDownloadButtonLabel();
+
 });
 
 closeModalBtn.addEventListener("click", () => {
